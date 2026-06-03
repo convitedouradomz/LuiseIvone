@@ -2118,48 +2118,6 @@
     padding: 8px 0;
   }
 }
-/* BOTÃO FLUTUANTE DE MÚSICA */
-.botao-musica-flutuante {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 55px;
-  height: 55px;
-  background: linear-gradient(135deg, var(--verde-oliva), var(--verde-oliva-suave));
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 99999;
-  pointer-events: auto; 
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  border: 2px solid var(--dourado);
-  animation: pulsarBotao 1.5s infinite ease-in-out;
-}
-
-.botao-musica-flutuante:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-}
-
-.botao-musica-flutuante i {
-  font-size: 1.8rem;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-@keyframes pulsarBotao {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  }
-  50% {
-    transform: scale(1.08);
-    box-shadow: 0 5px 30px rgba(212, 175, 55, 0.5);
-  }
-}
 
 /* Esconder o botão antigo de tocar música */
 #btnTocarMusica {
@@ -2398,6 +2356,50 @@ body {
   position: relative;
   margin-left: calc(-50vw + 50%) !important;
   margin-right: calc(-50vw + 50%) !important;
+}
+
+/* BOTÃO DE MÚSICA - VERSÃO FINAL E DEFINITIVA */
+#botaoMusica.botao-musica-flutuante {
+  position: fixed !important;
+  clip: auto !important;
+  clip-path: none !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  top: auto !important;
+  left: auto !important;
+  width: 55px !important;
+  height: 55px !important;
+  background: #000000 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  z-index: 999999999 !important;
+  border: 2px solid #d4af37 !important;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: auto !important;
+}
+
+#botaoMusica.botao-musica-flutuante i {
+  font-size: 1.8rem !important;
+  color: white !important;
+}
+
+#botaoMusica.botao-musica-flutuante:hover {
+  transform: scale(1.1) !important;
+}
+#botaoMusica {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+  clip: auto !important;
+  clip-path: none !important;
 }
 </style>
   </head>
@@ -2950,6 +2952,7 @@ body {
     <i class="fas fa-check-circle"></i> Obrigado pelo seu presente! ❤️
   </div>
 </div>
+</section>
       <!-- RODAPÉ - SCROLL FINAL -->
 <section id="rodape" class="secao">
   <div class="conteudo-secao">
@@ -3767,10 +3770,7 @@ window.addEventListener('load', function() {
   }, 500);
 });
     </script>
-    <!-- BOTÃO FLUTUANTE DE MÚSICA -->
-<div id="botaoMusica" class="botao-musica-flutuante">
-  <i id="iconeMusica" class="fas fa-play"></i>
-</div>
+    
 
 <script>
   // LISTA DE PRESENTES (GLOBAL)
@@ -4034,6 +4034,41 @@ window.addEventListener('load', function() {
       renderizarListaPresentesFirebase();
     }
   });
+</script>
+<!-- BOTÃO FLUTUANTE DE MÚSICA - VERSÃO FINAL -->
+<div id="botaoMusica" class="botao-musica-flutuante" style="position:fixed!important;bottom:20px!important;right:20px!important;width:55px!important;height:55px!important;background:black!important;border-radius:50%!important;display:flex!important;justify-content:center!important;align-items:center!important;z-index:999999999!important;border:2px solid #d4af37!important;cursor:pointer!important;box-shadow:0 5px 20px rgba(0,0,0,0.3)!important">
+  <i id="iconeMusica" class="fas fa-play" style="color:white!important;font-size:1.8rem!important"></i>
+</div>
+
+<script>
+  // SCRIPT ESPECÍFICO PARA O BOTÃO DE MÚSICA
+  (function() {
+    var botao = document.getElementById("botaoMusica");
+    var audio = document.getElementById("musicaFundo");
+    var icone = document.getElementById("iconeMusica");
+    
+    if (botao && audio) {
+      botao.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if (audio.paused) {
+          audio.play();
+          icone.className = "fas fa-pause";
+          icone.style.color = "white";
+        } else {
+          audio.pause();
+          icone.className = "fas fa-play";
+          icone.style.color = "white";
+        }
+        return false;
+      };
+      
+      console.log("Botão de música ativado!");
+    } else {
+      console.log("Botão ou áudio não encontrado!");
+    }
+  })();
 </script>
   </body>
 </html>
