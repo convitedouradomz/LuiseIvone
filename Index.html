@@ -1375,52 +1375,122 @@
         background-color: rgba(255, 255, 255, 0.1);
       }
 
-      /* RSVP - SCROLL 9 */
-      #rsvp {
-        background-color: #faf8f5;
-        position: relative;
-      }
+     /* RSVP - SCROLL 9 */
+#rsvp {
+  background-color: #faf8f5;
+  position: relative;
+}
 
-      .rsvp-container-elegante {
-        text-align: center;
-        max-width: 650px;
-        margin: 40px auto 0;
-        padding: 35px 30px;
-        background-color: var(--creme-claro);
-        border-radius: 15px;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
-        border-top: 3px solid var(--dourado);
-        position: relative;
-        z-index: 1;
-      }
+.rsvp-container-elegante {
+  text-align: center;
+  max-width: 650px;
+  margin: 40px auto 0;
+  padding: 35px 30px;
+  background-color: var(--creme-claro);
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.07);
+  border-top: 3px solid var(--dourado);
+  position: relative;
+  z-index: 1;
+}
 
-      .btn-whatsapp-elegante {
-        background: linear-gradient(135deg, #25d366, #1da851);
-        color: white;
-        border: none;
-        padding: 16px 45px;
-        font-size: 1.3rem;
-        border-radius: 50px;
-        margin-top: 25px;
-        cursor: pointer;
-        font-family: "Cormorant Garamond", serif;
-        font-weight: 700;
-        transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        text-decoration: none;
-        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.25);
-        letter-spacing: 0.5px;
-      }
+.btn-whatsapp-elegante {
+  background: linear-gradient(135deg, #25d366, #1da851);
+  color: white;
+  border: none;
+  padding: 16px 45px;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  margin-top: 25px;
+  cursor: pointer;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.25);
+  letter-spacing: 0.5px;
+}
 
-      .btn-whatsapp-elegante:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 35px rgba(37, 211, 102, 0.35);
-        letter-spacing: 1px;
-      }
+.btn-whatsapp-elegante:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.35);
+  letter-spacing: 1px;
+}
 
+/* ESTILOS DO FORMULÁRIO DE CONFIRMAÇÃO */
+.form-confirmacao {
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--verde-oliva);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid var(--verde-oliva-claro);
+  border-radius: 8px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  background-color: var(--branco);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--dourado);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+.opcoes-presenca {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.opcoes-presenca label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.opcoes-presenca input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--dourado);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
       /* MENSAGENS - SCROLL 10 (COM SISTEMA DE ABAS) */
      #mensagens {
   background: #faf8f5;
@@ -2498,7 +2568,7 @@ body {
               <div class="linha-pais"></div>
               <p class="pais-preto">
                 <strong>Filho de:</strong><br />
-                Pedro Muchuquetane Muchanga e Cândida Tchamo
+                Pedro Muchuquetane Muchanga(em memória) e Cândida Tchamo
               </p>
             </div>
 
@@ -2599,7 +2669,7 @@ body {
                 <i class="fas fa-church"></i>
               </div>
               <div class="info-evento-elegante">
-                <div class="hora-evento-elegante">10h</div>
+                <div class="hora-evento-elegante">9h</div>
                 <div class="titulo-evento-elegante">Cerimónia Religiosa</div>
                 <div class="local-evento-elegante">Igreja Nossa Senhora Rainha da Paz da Polana Caniço</div>
                 <button
@@ -2668,6 +2738,31 @@ body {
           </div>
         </div>
       </section>
+<!-- PREVISÃO DO TEMPO - SCROLL ENTRE AGENDA E CONTADOR -->
+<section id="previsao-tempo" class="secao">
+  <div class="conteudo-secao">
+    <div class="tempo-card">
+      <div class="tempo-icone">
+        <i class="fas fa-sun"></i>
+      </div>
+      <div class="tempo-info">
+        <h3>Previsão para o nosso grande dia</h3>
+        <div class="temperaturas">
+          <div class="temp-max">
+            <i class="fas fa-temperature-high"></i>
+            <span>Máxima: <strong>26°C</strong></span>
+          </div>
+          <div class="temp-min">
+            <i class="fas fa-temperature-low"></i>
+            <span>Mínima: <strong>21°C</strong></span>
+          </div>
+        </div>
+        <p class="tempo-descricao">☀️ Céu limpo, dia perfeito para celebrar o amor! ☀️</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <!-- CONTADOR - SCROLL 7 -->
       <section id="contador" class="secao">
@@ -2752,6 +2847,8 @@ body {
 
       <!-- RSVP - SCROLL 9 -->
      
+<!-- RSVP - SCROLL 9 -->
+<!-- RSVP - SCROLL 9 -->
 <section id="rsvp" class="secao">
   <div class="conteudo-secao">
     <h2>Confirmação de Presença</h2>
@@ -2760,19 +2857,310 @@ body {
         Por favor, confirme sua presença até 30 de Agosto de 2026
       </p>
       
-      <!-- APENAS UM BOTÃO -->
-      <div style="display: flex; justify-content: center;">
-        <a href="https://wa.me/258827918779?text=Olá, confirmo a minha presença no vosso casamento Luís e Ivone, no dia 26 de Setembro de 2026." 
-           class="btn-whatsapp-elegante" 
-           target="_blank"
-           style="background: linear-gradient(135deg, #25d366, #1da851);">
-          <i class="fab fa-whatsapp"></i> Confirmar Presença
-        </a>
+      <!-- FORMULÁRIO DE CONFIRMAÇÃO -->
+      <div class="form-confirmacao">
+        <div class="form-group">
+          <label for="nomeConfirmacao">Nome completo:</label>
+          <input type="text" id="nomeConfirmacao" placeholder="Digite seu nome completo">
+        </div>
+        
+        <div class="form-group">
+          <label>Confirmo minha presença:</label>
+          <div class="opcoes-presenca">
+            <label>
+              <input type="radio" name="presenca" value="Sim, estarei presente! 🎉" checked> Sim, estarei presente! 🎉
+            </label>
+            <label>
+              <input type="radio" name="presenca" value="Infelizmente não poderei comparecer 😔"> Infelizmente não poderei comparecer 😔
+            </label>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="acompanhantes">Número de acompanhantes (se aplicável):</label>
+          <input type="number" id="acompanhantes" min="0" value="0">
+        </div>
+       <button class="btn-confirmar-elegante" id="btnConfirmarPresenca">
+  <i class="fas fa-check-circle"></i> Confirmar Presença
+</button>
       </div>
-      
     </div>
   </div>
 </section>
+
+<style>
+/* ESTILOS DO FORMULÁRIO DE CONFIRMAÇÃO */
+.form-confirmacao {
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--verde-oliva);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid var(--verde-oliva-claro);
+  border-radius: 8px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  background-color: var(--branco);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--dourado);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+.opcoes-presenca {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.opcoes-presenca label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.opcoes-presenca input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--dourado);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+/* PREVISÃO DO TEMPO */
+#previsao-tempo {
+  min-height: 40vh;
+  background: linear-gradient(135deg, #faf8f5 0%, #f5f0e8 100%);
+  padding: 40px 15px;
+}
+
+.tempo-card {
+  max-width: 500px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #ffffff 0%, #fef9f0 100%);
+  border-radius: 25px;
+  padding: 30px 25px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: subirTempo 0.8s ease-out 0.5s forwards;
+}
+
+@keyframes subirTempo {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tempo-icone {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  animation: pulsarSol 2s infinite ease-in-out;
+}
+
+@keyframes pulsarSol {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.tempo-icone i {
+  background: linear-gradient(135deg, #f5af19, #f12711);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tempo-info h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: var(--verde-oliva);
+  margin-bottom: 20px;
+}
+
+.temperaturas {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.temp-max, .temp-min {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.temp-max i {
+  color: #ff6b35;
+  font-size: 1.5rem;
+}
+
+.temp-min i {
+  color: #3498db;
+  font-size: 1.5rem;
+}
+
+.temp-max strong, .temp-min strong {
+  font-size: 1.4rem;
+  color: var(--verde-oliva);
+}
+
+.tempo-descricao {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.2rem;
+  color: var(--dourado);
+  margin-top: 15px;
+  font-style: italic;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .tempo-card {
+    padding: 20px 15px;
+  }
+  
+  .temperaturas {
+    gap: 20px;
+  }
+  
+  .temp-max, .temp-min {
+    padding: 6px 15px;
+    font-size: 1rem;
+  }
+  
+  .temp-max strong, .temp-min strong {
+    font-size: 1.2rem;
+  }
+  
+  .tempo-info h3 {
+    font-size: 1.2rem;
+  }
+}
+/* BOTÃO CONFIRMAR PRESENÇA - ESTILO ELEGANTE */
+.btn-confirmar-elegante {
+  background: linear-gradient(135deg, var(--verde-oliva), var(--verde-oliva-suave));
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.5px;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.btn-confirmar-elegante:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, var(--dourado), #b8942e);
+  color: var(--verde-oliva);
+}
+
+.btn-confirmar-elegante i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-confirmar-elegante:hover i {
+  transform: scale(1.1);
+}
+</style>
+
+<script>
+// Função para enviar confirmação via WhatsApp
+document.getElementById("btnConfirmarPresenca")?.addEventListener("click", function() {
+  const nome = document.getElementById("nomeConfirmacao").value.trim();
+  const presenca = document.querySelector('input[name="presenca"]:checked')?.value || "";
+  const acompanhantes = document.getElementById("acompanhantes").value;
+  const mensagemExtra = document.getElementById("mensagemExtra").value.trim();
+  
+  if (!nome) {
+    alert("Por favor, digite seu nome completo!");
+    return;
+  }
+  
+  // Número do WhatsApp para onde vai a mensagem
+  const numeroWhatsApp = "258827918779";
+  
+  // Construir mensagem
+  let textoMensagem = `*CONFIRMAÇÃO DE PRESENÇA - CASAMENTO LUÍS & IVONE*%0A%0A`;
+  textoMensagem += `*Nome:* ${nome}%0A`;
+  textoMensagem += `*Presença:* ${presenca}%0A`;
+  textoMensagem += `*Acompanhantes:* ${acompanhantes}%0A`;
+  if (mensagemExtra) {
+    textoMensagem += `*Mensagem:* ${mensagemExtra}%0A`;
+  }
+  textoMensagem += `%0A*Data do evento:* 26 de Setembro de 2026`;
+  
+  // Abrir WhatsApp
+  const url = `https://wa.me/${numeroWhatsApp}?text=${textoMensagem}`;
+  window.open(url, '_blank');
+});
+
+</script>
 
       <!-- MENSAGENS - SCROLL 10 (COM SISTEMA DE ABAS) -->
       <section id="mensagens" class="secao">
@@ -4069,6 +4457,28 @@ window.addEventListener('load', function() {
       console.log("Botão ou áudio não encontrado!");
     }
   })();
+  // Função para enviar confirmação via WhatsApp
+document.getElementById("btnConfirmarPresenca")?.addEventListener("click", function() {
+  const nome = document.getElementById("nomeConfirmacao").value.trim();
+  const presenca = document.querySelector('input[name="presenca"]:checked')?.value || "";
+  const acompanhantes = document.getElementById("acompanhantes").value;
+  
+  if (!nome) {
+    alert("Por favor, digite seu nome completo!");
+    return;
+  }
+  
+  const numeroWhatsApp = "258827918779";
+  
+  let textoMensagem = `*CONFIRMAÇÃO DE PRESENÇA - CASAMENTO LUÍS & IVONE*%0A%0A`;
+  textoMensagem += `*Nome:* ${nome}%0A`;
+  textoMensagem += `*Presença:* ${presenca}%0A`;
+  textoMensagem += `*Acompanhantes:* ${acompanhantes}%0A`;
+  textoMensagem += `%0A*Data do evento:* 26 de Setembro de 2026`;
+  
+  // Abrir WhatsApp em nova aba (não sai do convite)
+  window.open(`https://wa.me/${numeroWhatsApp}?text=${textoMensagem}`, '_blank');
+});
 </script>
   </body>
 </html>
