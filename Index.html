@@ -4453,14 +4453,10 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
       }
       
-      const numero = "258827918779";
-      let msg = `*CONFIRMAÇÃO DE PRESENÇA - LUÍS & IVONE*%0A%0A`;
-      msg += `*Nome:* ${encodeURIComponent(nome)}%0A`;
-      msg += `*Presença:* ${encodeURIComponent(presenca)}%0A`;
-      msg += `*Acompanhantes:* ${acompanhantes}%0A`;
-      msg += `%0A*Data:* 26 de Setembro de 2026`;
+   const numero = "258827918779";
+      const textoCompleto = `*CONFIRMAÇÃO DE PRESENÇA - LUÍS & IVONE*\n\n*Nome:* ${nome}\n*Presença:* ${presenca}\n*Acompanhantes:* ${acompanhantes}\n\n*Data:* 26 de Setembro de 2026`;
       
-      window.open(`https://wa.me/${numero}?text=${msg}`, '_blank');
+      window.open(`https://wa.me/${numero}?text=${encodeURIComponent(textoCompleto)}`, '_blank');
       
       console.log("✅ Nome enviado:", nome);
     });
