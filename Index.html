@@ -3130,35 +3130,8 @@ textarea {
 </style>
 
 <script>
-// Função para enviar confirmação via WhatsApp
-document.getElementById("btnConfirmarPresenca")?.addEventListener("click", function() {
-  const nome = document.getElementById("nomeConfirmacao").value.trim();
-  const presenca = document.querySelector('input[name="presenca"]:checked')?.value || "";
-  const acompanhantes = document.getElementById("acompanhantes").value;
-  const mensagemExtra = document.getElementById("mensagemExtra").value.trim();
-  
-  if (!nome) {
-    alert("Por favor, digite seu nome completo!");
-    return;
-  }
-  
-  // Número do WhatsApp para onde vai a mensagem
-  const numeroWhatsApp = "258827918779";
-  
-  // Construir mensagem
-  let textoMensagem = `*CONFIRMAÇÃO DE PRESENÇA - CASAMENTO LUÍS & IVONE*%0A%0A`;
-  textoMensagem += `*Nome:* ${nome}%0A`;
-  textoMensagem += `*Presença:* ${presenca}%0A`;
-  textoMensagem += `*Acompanhantes:* ${acompanhantes}%0A`;
-  if (mensagemExtra) {
-    textoMensagem += `*Mensagem:* ${mensagemExtra}%0A`;
-  }
-  textoMensagem += `%0A*Data do evento:* 26 de Setembro de 2026`;
-  
-  // Abrir WhatsApp
-  const url = `https://wa.me/${numeroWhatsApp}?text=${textoMensagem}`;
-  window.open(url, '_blank');
-});
+
+
 
 </script>
 
@@ -4423,11 +4396,11 @@ window.addEventListener('load', function() {
 </script>
 <!-- BOTÃO FLUTUANTE DE MÚSICA - VERSÃO FINAL -->
 <div id="botaoMusica" class="botao-musica-flutuante" style="position:fixed!important;bottom:20px!important;right:20px!important;width:55px!important;height:55px!important;background:black!important;border-radius:50%!important;display:flex!important;justify-content:center!important;align-items:center!important;z-index:999999999!important;border:2px solid #d4af37!important;cursor:pointer!important;box-shadow:0 5px 20px rgba(0,0,0,0.3)!important">
-  <i id="iconeMusica" class="fas fa-play" style="color:white!important;font-size:1.8rem!important"></i>
+  <iid="iconeMusica" class="fas fa-play" style="color:white!important;font-size:1.8rem!important"></i>
 </div>
 
+<!-- SCRIPT DO BOTÃO DE MÚSICA -->
 <script>
-  // SCRIPT ESPECÍFICO PARA O BOTÃO DE MÚSICA
   (function() {
     var botao = document.getElementById("botaoMusica");
     var audio = document.getElementById("musicaFundo");
@@ -4455,28 +4428,47 @@ window.addEventListener('load', function() {
       console.log("Botão ou áudio não encontrado!");
     }
   })();
-  // Função para enviar confirmação via WhatsApp
-document.getElementById("btnConfirmarPresenca")?.addEventListener("click", function() {
-  const nome = document.getElementById("nomeConfirmacao").value.trim();
-  const presenca = document.querySelector('input[name="presenca"]:checked')?.value || "";
-  const acompanhantes = document.getElementById("acompanhantes").value;
+</script>
+
+<!-- SCRIPT DE CONFIRMAÇÃO DE PRESENÇA -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const btn = document.getElementById("btnConfirmarPresenca");
   
-  if (!nome) {
-    alert("Por favor, digite seu nome completo!");
-    return;
+  if (btn) {
+    btn.addEventListener("click", function(e) {
+      e.preventDefault();
+      
+      const nomeInput = document.getElementById("nomeConfirmacao");
+      const presencaInput = document.querySelector('input[name="presenca"]:checked');
+      const acompanhantesInput = document.getElementById("acompanhantes");
+      
+      const nome = nomeInput ? nomeInput.value.trim() : "";
+      const presenca = presencaInput ? presencaInput.value : "";
+      const acompanhantes = acompanhantesInput ? acompanhantesInput.value : "0";
+      
+      if (!nome) {
+        alert("⚠️ Por favor, digite o seu nome completo!");
+        nomeInput.focus();
+        return;
+      }
+      
+      const numero = "258827918779";
+      let msg = `*CONFIRMAÇÃO DE PRESENÇA - LUÍS & IVONE*%0A%0A`;
+      msg += `*Nome:* ${encodeURIComponent(nome)}%0A`;
+      msg += `*Presença:* ${encodeURIComponent(presenca)}%0A`;
+      msg += `*Acompanhantes:* ${acompanhantes}%0A`;
+      msg += `%0A*Data:* 26 de Setembro de 2026`;
+      
+      window.open(`https://wa.me/${numero}?text=${msg}`, '_blank');
+      
+      console.log("✅ Nome enviado:", nome);
+    });
+  } else {
+    console.log("❌ Botão btnConfirmarPresenca não encontrado!");
   }
-  
-  const numeroWhatsApp = "258827918779";
-  
-  let textoMensagem = `*CONFIRMAÇÃO DE PRESENÇA - CASAMENTO LUÍS & IVONE*%0A%0A`;
-  textoMensagem += `*Nome:* ${nome}%0A`;
-  textoMensagem += `*Presença:* ${presenca}%0A`;
-  textoMensagem += `*Acompanhantes:* ${acompanhantes}%0A`;
-  textoMensagem += `%0A*Data do evento:* 26 de Setembro de 2026`;
-  
-  // Abrir WhatsApp em nova aba (não sai do convite)
-  window.open(`https://wa.me/${numeroWhatsApp}?text=${textoMensagem}`, '_blank');
 });
 </script>
-  </body>
+
+</body>
 </html>
