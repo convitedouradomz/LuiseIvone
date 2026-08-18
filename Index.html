@@ -3697,8 +3697,7 @@ const diaSeguinte = new Date("2026-09-27T00:00:00").toDateString();
         }
 
         // Verificar se é dia seguinte ao casamento (09/08/2026)
-        if (dataHoje === diaSeguinte) {
-          const tituloContador = document.querySelector("#contador h2");
+if (agora > dataCasamento) {          const tituloContador = document.querySelector("#contador h2");
           if (tituloContador) {
             tituloContador.innerHTML = "💍 Finalmente Casados! 💍";
             tituloContador.style.fontSize = "2rem";
